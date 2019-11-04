@@ -6,19 +6,28 @@ namespace SportsStore.Models
 {
     class Product
     {
-        private string Description;
-        private string Name;
-        private double Price;
-        private int ProductId;
+        public int ProductId { get; private set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
 
-        public void Equals()
+        public Product(string name, decimal price, string description = null, int productId = 0)
         {
-
+            ProductId = productId;
+            Name = name;
+            Price = price;
+            Description = description;
         }
 
-        public void GetHashcode()
+        public override bool Equals(object obj)
         {
+            if (!(obj is Product p)) return false;
+            return p.ProductId == ProductId;
+        }
 
+        public override int GetHashCode()
+        {
+            return ProductId;
         }
     }
 }

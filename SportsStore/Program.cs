@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportsStore.Models;
+using System;
 
 namespace SportsStore
 {
@@ -6,7 +7,7 @@ namespace SportsStore
     {
         static void Main(string[] args)
         {
-            var context = new ApplicationDBContext();
+            var context = new ApplicationDbContext();
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
             Console.WriteLine("Database created...");

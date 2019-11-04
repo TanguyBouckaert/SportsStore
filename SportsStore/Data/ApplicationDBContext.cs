@@ -1,22 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using SportsStore.Data.Mappers;
 
 namespace SportsStore
 {
-    class ApplicationDBContext : DbContext
+    class ApplicationDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            var connectionstring = @"Server=localhost;Database=SportsStore;Integrated Security=True;";
+            var connectionstring = @"Server=.;Database=SportsStore;Integrated Security=True;";
             optionsBuilder.UseSqlServer(connectionstring);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new ProductConfuration());
         }
     }
 }
