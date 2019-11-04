@@ -15,7 +15,7 @@ namespace SportsStore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new ProductConfuration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
         }
     }
 }

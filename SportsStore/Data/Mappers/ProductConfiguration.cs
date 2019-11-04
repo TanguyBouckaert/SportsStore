@@ -4,7 +4,7 @@ using SportsStore.Models;
 
 namespace SportsStore.Data.Mappers
 {
-    class ProductConfuration : IEntityTypeConfiguration<Product>
+    class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
